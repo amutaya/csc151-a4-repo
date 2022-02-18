@@ -7,10 +7,7 @@
 """This file contains all the unit tests for the functionality of the cipher.py program"""
 # ---------------------------------------------------------------------------
 
-import cipher
+from cipher import *
 
 def generatePad_test():
-    
-
-
-
+    assert generatePad() == 1000
