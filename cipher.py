@@ -1,13 +1,20 @@
-# Author: Annah N Mutaya
+#!/usr/bin/env python3  
+# -*- coding: utf-8 -*- 
+#----------------------------------------------------------------------------
+# Created By  : Annah N Mutaya
+# Created Date: 2/18/2022
+# ---------------------------------------------------------------------------
 # This file contains an encryption system which uses a one time pad for its cipher and returns the decrypted message
+# ---------------------------------------------------------------------------
 
-import secrets # to generate more reliable randomness
+import secrets       # to generate more reliable randomness as oppossed to random
 import string 
 import sys
 
-# Function to generate the random letters of the pad. Takes in the length in characters and returns a file with random upper 
-# case letters of equal length.
+"""Function to generate the random letters of the pad. Takes in the length in characters and returns a file with random upper 
+case letters of equal length"""
 
+msg_length = 1000       # Set a default number of characters to generate if user doesn't input message length
 def generatePad(msg_length):
     pad = ""
     for index in range(msg_length):
