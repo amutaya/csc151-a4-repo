@@ -1,0 +1,19 @@
+Ya, the assignments keep getting more and more demanding. They also get more and more interesting. I knew this assignment was
+going to be a challenge so I started it very early. Despite having worked on the Ceaser cipher in class, I still did not 
+understand how the OTP worked, so I had to start with that before writing any code. Once I felt I had a solid understanding, I 
+then now started writing. I am impressed by how I am actually improving my knowledge and comfort in programming. Although I have
+the prerequisites for the class, truth is my coding comfort levels are very low and I have a hard time understanding code. So 
+that I independently wrote the generate pad function alone and that it was working was amazing for me. I had a challenge with 
+the encryption method as I could not figure out how to match the pad and message ascii while skipping over punctuation and 
+spaces. After figuring that out, the real challenge was the standalone program. I had no idea how to use the sys.arg to get
+input from the user using the command line. It took me a really long time to read about and understand this. Another reason why
+starting the assignment early is always the way to go! I think I got the hang of how to use it, but I still don't fully
+understand the concept. Ooops, realized quite late that my idea of converting all the letters in the message into uppercase
+for ease of conversion into ascii doesn't work quite well when converting them back into the decrypted message. More if statements
+needed. 
+I missed the deadline and that makes me really sad. I had a bug that took me a really long time to fix, and that's even before 
+starting to take care of capitalization for my encrypted message. The fact that I was using a text file to test my code instead
+of the provided encrypted message one made me miss a few edge cases. So I ended up trying the advanced challenge before even 
+meeting the assignment expectations. I am quite disappointed with how this turned out. I had started the assignment on a high
+note and having to submit substandard code that was not even properly organized, commented or tested in a rush to meet the 
+deadline made me sad. I hope I can do better next time. 
