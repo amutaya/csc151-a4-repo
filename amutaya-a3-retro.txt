@@ -10,7 +10,7 @@ input from the user using the command line. It took me a really long time to rea
 starting the assignment early is always the way to go! I think I got the hang of how to use it, but I still don't fully
 understand the concept. Ooops, realized quite late that my idea of converting all the letters in the message into uppercase
 for ease of conversion into ascii doesn't work quite well when converting them back into the decrypted message. More if statements
-needed. 
+needed. Let's get down to it. 
 I missed the deadline and that makes me really sad. I had a bug that took me a really long time to fix, and that's even before 
 starting to take care of capitalization for my encrypted message. The fact that I was using a text file to test my code instead
 of the provided encrypted message one made me miss a few edge cases. So I ended up trying the advanced challenge before even 
