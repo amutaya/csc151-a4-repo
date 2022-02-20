@@ -28,10 +28,10 @@ def generatePad(msg_length):
 # Function to encrypt the message. It takes in the message and the pad and returns the encrypted message.
 def encipher(file1, file2):
     try:
-        with open(file1) as f:
-            msg = f.read()
-        with open(file2) as f:
-            pad = f.read()
+    with open(file1) as f:
+        msg = f.read()
+    with open(file2) as f:
+        pad = f.read()
     except FileNotFoundError:
         print("Please input a valid file name.")
 
