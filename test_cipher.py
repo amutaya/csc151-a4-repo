@@ -9,5 +9,5 @@
 
 from cipher import *
 
-def generatePad_test():
-    assert generatePad() == 1000
+def test_encipher():
+    assert encipher("encipher_test.txt", "encipher_test_pad.txt") == "NhN@m!"
