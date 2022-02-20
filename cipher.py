@@ -14,7 +14,7 @@ import sys
 """Function to generate the random letters of the pad. Takes in the length in characters and returns a file with random upper 
 case letters of equal length"""
 
-msg_length = 1000       # Set a default number of characters to generate if user doesn't input message length
+# msg_length = 1000       # Set a default number of characters to generate if user doesn't input message length
 def generatePad(msg_length):
     pad = ""
     for index in range(msg_length):
@@ -24,20 +24,18 @@ def generatePad(msg_length):
     with open("pad.txt", "w") as file:       # save the result in a file called pad.txt
         file.write(pad)
 
+
 # Function to encrypt the message. It takes in the message and the pad and returns the encrypted message.
 def encipher(file1, file2):
     with open(file1) as f:
         msg = f.read()
     with open(file2) as f:
         pad = f.read()
-    
-    msg_length = len(msg)
 
     pad_ascii = []      # convert pad letters into ascii numbers
     for letter in pad:    
         letter_ascii = ord(letter)
         pad_ascii.append(letter_ascii)
-
 
     # shift the characters and return the shifted message in ascii
     index = 0
@@ -51,10 +49,10 @@ def encipher(file1, file2):
                 shifted = (char_ascii - 65 + shift) % 26 + 65
             elif (char_ascii >= 97) and (char_ascii <= 122):
                 shifted = (char_ascii - 97 + shift) % 26 + 97
+            index += 1                      # increment the index if shifted the alpha letters
         else:
             shifted = char
             not_ascii.append(shifted)
-        index += 1                      # increment the index if shifted the alpha letters
         shifted_msg.append(shifted)
   
 
@@ -124,6 +122,7 @@ def save_file(file_name, data):
     with open(file_name, 'w') as f:
         f.write(data)
 
+# Prints out the command line user instructions 
 def manual():
         print('1. python cipher.py -m shows a manual for how the cipher is used')
         print('2. python cipher.py -p pad.txt generates a one-time pad')
@@ -131,7 +130,7 @@ def manual():
         print('4. python cipher.py -d encrypted-message.txt -w pad.txt decrypts the message with the pad')
         print()
 
-if __name__ == '__main__':
+if __name__ == '__main__':      # command line interactive tools
 
     cipher_choices = ["-d", "-e", "-m", "-p", "-w"]
     if len(sys.argv) == 1:
@@ -141,7 +140,7 @@ if __name__ == '__main__':
         print("Please refer to the manual below")
         manual()
     elif sys.argv[1] == cipher_choices[3]:
-        generatePad(10000)
+        generatePad(10000)                  # Sets a default number of characters to generate
     elif sys.argv[1] == cipher_choices[1] and sys.argv[3] == cipher_choices[4]:
         save_file("encrypted-message.txt", encipher(sys.argv[2], sys.argv[3]))
     else:
