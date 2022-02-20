@@ -27,10 +27,14 @@ def generatePad(msg_length):
 
 # Function to encrypt the message. It takes in the message and the pad and returns the encrypted message.
 def encipher(file1, file2):
-    with open(file1) as f:
-        msg = f.read()
-    with open(file2) as f:
-        pad = f.read()
+    try:
+        with open(file1) as f:
+            msg = f.read()
+        with open(file2) as f:
+            pad = f.read()
+    except FileNotFoundError:
+        print("Please input a valid file name.")
+
 
     pad_ascii = []      # convert pad letters into ascii numbers
     for letter in pad:    
@@ -67,7 +71,6 @@ def encipher(file1, file2):
         encrypted_text += letter
     with open("encrypted-message.txt", "w") as file:       # save the result in a file called encrypted-message.txt
         file.write(encrypted_text)
-    return encrypted_text
    
 
 # Function to decrypt the encrypted message; it takes in the pad and the encrypted message, and returns the decrypted message    
@@ -117,8 +120,8 @@ def decipher(file1, file2):
 
 decipher("encrypted-message.txt","pad.txt")
 
+# Function to save the written files
 def save_file(file_name, data):
-
     with open(file_name, 'w') as f:
         f.write(data)
 
@@ -140,7 +143,7 @@ if __name__ == '__main__':      # command line interactive tools
         print("Please refer to the manual below")
         manual()
     elif sys.argv[1] == cipher_choices[3]:
-        generatePad(10000)                  # Sets a default number of characters to generate
+        generatePad(10000)                  # Sets a default number of characters to be generated
     elif sys.argv[1] == cipher_choices[1] and sys.argv[3] == cipher_choices[4]:
         save_file("encrypted-message.txt", encipher(sys.argv[2], sys.argv[3]))
     else:
