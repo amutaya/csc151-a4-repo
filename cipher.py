@@ -21,10 +21,9 @@ def generatePad(msg_length):
         pad_chars = secrets.choice(string.ascii_uppercase)
         pad += pad_chars
 
-    with open("test_pad.txt", "w") as file:       # save the result in a file called pad.txt
+    with open("pad.txt", "w") as file:       # save the result in a file called pad.txt
         file.write(pad)
 
-generatePad(7)
 # Function to encrypt the message. It takes in the message and the pad and returns the encrypted message.
 def encipher(file1, file2):
     try:
@@ -69,9 +68,9 @@ def encipher(file1, file2):
         else:
             letter = i
         encrypted_text += letter
-    with open("test_encipher.txt", "w") as file:       # save the result in a file called encrypted-message.txt
+    with open("encrypted-message.txt", "w") as file:       # save the result in a file called encrypted-message.txt
         file.write(encrypted_text)
-    return encrypted_text
+    # return encrypted_text
 
 # Function to decrypt the encrypted message; it takes in the pad and the encrypted message, and returns the decrypted message    
 def decipher(file1, file2):
