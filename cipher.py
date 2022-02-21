@@ -21,17 +21,17 @@ def generatePad(msg_length):
         pad_chars = secrets.choice(string.ascii_uppercase)
         pad += pad_chars
 
-    with open("pad.txt", "w") as file:       # save the result in a file called pad.txt
+    with open("test_pad.txt", "w") as file:       # save the result in a file called pad.txt
         file.write(pad)
 
-
+generatePad(7)
 # Function to encrypt the message. It takes in the message and the pad and returns the encrypted message.
 def encipher(file1, file2):
     try:
-    with open(file1) as f:
-        msg = f.read()
-    with open(file2) as f:
-        pad = f.read()
+        with open(file1) as f:
+            msg = f.read()
+        with open(file2) as f:
+            pad = f.read()
     except FileNotFoundError:
         print("Please input a valid file name.")
 
@@ -46,7 +46,7 @@ def encipher(file1, file2):
     shifted_msg = []
     not_ascii = []
     for char in msg:
-        shift = pad_ascii[index]        # Define shift as the number at index i of the pad
+        shift = pad_ascii[index] - 65       # Define shift as the number at index i of the pad
         if char.isalpha():
             char_ascii = ord(char) 
             if (char_ascii >= 65) and (char_ascii <= 90):
@@ -69,16 +69,19 @@ def encipher(file1, file2):
         else:
             letter = i
         encrypted_text += letter
-    with open("encrypted-message.txt", "w") as file:       # save the result in a file called encrypted-message.txt
+    with open("test_encipher.txt", "w") as file:       # save the result in a file called encrypted-message.txt
         file.write(encrypted_text)
-   
+    return encrypted_text
 
 # Function to decrypt the encrypted message; it takes in the pad and the encrypted message, and returns the decrypted message    
 def decipher(file1, file2):
-    with open(file1) as f1:
-        encrypted_msg = f1.read()
-    with open(file2) as f2:
-        pad = f2.read()
+    try:
+        with open(file1) as f1:
+            encrypted_msg = f1.read()
+        with open(file2) as f2:
+            pad = f2.read()
+    except FileNotFoundError:
+        print("Please input a valid file name")
 
     pad_ascii = []      # convert pad letters into ascii numbers
     for letter in pad:  
@@ -98,7 +101,7 @@ def decipher(file1, file2):
                 shifted = (char_ascii - 65 - shift) % 26 + 65
             elif (char_ascii >= 97) and (char_ascii <= 122):
                 shifted = (char_ascii - 97 - shift) % 26 + 97
-            index += 1
+            index += 1                              # Increment the index of the pad if the character has been shifted
         else:
             shifted = char
             not_ascii.append(shifted)
@@ -114,11 +117,9 @@ def decipher(file1, file2):
         else:
             letter = i
         decrypted_text += letter
-    with open("decrypted-message.txt", "w") as file:       # save the result in a file called encrypted-message.txt
+    with open("decrypted-message.txt", "w") as file:       # save the result in a file called decrypted-message.txt
         file.write(decrypted_text)
     return (decrypted_text)
-
-decipher("encrypted-message.txt","pad.txt")
 
 # Function to save the written files
 def save_file(file_name, data):
