@@ -1,0 +1,11 @@
+This assignment had a lot of videos to watch that took up most of my time. I am just getting started with git so I had to watch
+all the videos in order to even start the assignment. So I started it late again. But it progressed quite well. I had a difficult
+time starting because I didn't know how to test my functions-they were all very dense. And when I finally did, I also had quite
+some trouble writing the tests as I kept on getting failed ones. On the other hand, pushing the commits in git was going well. 
+I finally read more documentation on unit testing and decided to make a class for my tests. However, I only produced three tests
+for my program. I know this is not enough, and I am definitely missing some edge cases here.One of the edge cases was what if a
+user tries to encrypt a NULL file. I know I should have added this to my tests, but I really didn't know how to write such a 
+test. Maybe this is what limited my test cases to be very few. Another thing was the README. It's my first time writing one, and
+although I have read some templates on the internet, I am not sure even the tone or tenses are correct. I guess we only get better
+with time. All in all, it wasn't so bad an assignment. I wish I could have done more tests, so its not my best work in that area,
+but it wasn't bad. Will look forward to improving in the next ones. 
